@@ -1,0 +1,292 @@
+body {
+    margin: 0;
+    font-family: Arial, "Malgun Gothic", sans-serif;
+    color: #222;
+    background: #f5f6f8;
+    min-width: 320px;
+}
+
+a {
+    color: #205493;
+    text-decoration: none;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    box-sizing: border-box;
+    min-height: 52px;
+    background: #263747;
+    color: white;
+    padding: 12px 28px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.nav-links,
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-width: 0;
+    white-space: nowrap;
+}
+
+.auth-links {
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+.topbar a {
+    color: white;
+}
+
+.topbar .title {
+    font-weight: bold;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.container {
+    width: 1120px;
+    max-width: calc(100% - 40px);
+    margin: 24px auto 40px;
+    background: white;
+    border: 1px solid #d9dde3;
+    box-sizing: border-box;
+    padding: 28px 32px 34px;
+}
+
+h1 {
+    font-size: 26px;
+    margin: 0 0 18px;
+}
+
+h2 {
+    font-size: 20px;
+    margin: 24px 0 12px;
+}
+
+.message {
+    padding: 12px;
+    margin-bottom: 16px;
+    background: #eef6ff;
+    border: 1px solid #b8d6f3;
+}
+
+.error {
+    padding: 12px;
+    margin-bottom: 16px;
+    background: #fff1f1;
+    border: 1px solid #e5b4b4;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+}
+
+th, td {
+    border: 1px solid #d9dde3;
+    padding: 9px 10px;
+    text-align: left;
+}
+
+th {
+    background: #eef1f5;
+}
+
+input, select, textarea {
+    padding: 8px;
+    border: 1px solid #c8ced6;
+    font-size: 14px;
+}
+
+button, .button {
+    display: inline-block;
+    padding: 8px 13px;
+    background: #205493;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.button.secondary, button.secondary {
+    background: #607080;
+}
+
+.form-row {
+    margin-bottom: 12px;
+}
+
+.form-row label {
+    display: inline-block;
+    width: 120px;
+    font-weight: bold;
+}
+
+.filter-form {
+    display: flex;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 6px 0 26px;
+    padding: 14px;
+    background: #f8fafc;
+    border: 1px solid #d9dde3;
+}
+
+.filter-form .form-row {
+    margin: 0;
+}
+
+.filter-form .form-row label {
+    display: block;
+    width: auto;
+    margin-bottom: 5px;
+}
+
+.filter-form button {
+    height: 38px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.main-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.main-grid .box {
+    min-height: 150px;
+}
+
+.box {
+    border: 1px solid #d9dde3;
+    padding: 12px;
+    background: #fafafa;
+}
+
+.available {
+    color: #146c2e;
+    font-weight: bold;
+}
+
+.unavailable {
+    color: #b00020;
+    font-weight: bold;
+}
+
+.disabled {
+    color: #777;
+    font-weight: bold;
+}
+
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(130px, 1fr));
+    gap: 10px;
+    margin: 12px 0 28px;
+}
+
+.resource-cell {
+    box-sizing: border-box;
+    min-height: 112px;
+    border: 1px solid #cfd5dc;
+    background: #f9fafb;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.resource-cell .name {
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+.resource-cell.reserved-other {
+    background: #555;
+    border-color: #444;
+    color: white;
+}
+
+.resource-cell.reserved-other .unavailable {
+    color: white;
+}
+
+.resource-cell.mine {
+    background: #e6f3ff;
+    border-color: #5fa8dd;
+}
+
+.resource-cell.unused {
+    background: #fbfcfe;
+}
+
+.resource-cell.disabled-cell {
+    background: #ddd;
+    color: #777;
+}
+
+.resource-cell form {
+    margin-top: auto;
+}
+
+.resource-cell button {
+    min-width: 52px;
+}
+
+.reservation-list-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.reservation-list-grid .box {
+    min-height: 120px;
+}
+
+@media (max-width: 900px) {
+    .topbar {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .resource-grid,
+    .grid,
+    .reservation-list-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .topbar {
+        flex-wrap: wrap;
+        overflow: visible;
+    }
+
+    .auth-links {
+        width: 100%;
+        justify-content: flex-end;
+    }
+
+    .container {
+        max-width: calc(100% - 20px);
+        padding: 20px 14px 28px;
+    }
+
+    .resource-grid,
+    .grid,
+    .reservation-list-grid {
+        grid-template-columns: 1fr;
+    }
+}

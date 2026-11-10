@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <WatchedResource>WEB-INF/web.xml</WatchedResource>
+    <WatchedResource>WEB-INF/tomcat-web.xml</WatchedResource>
+    <WatchedResource>${catalina.base}/conf/web.xml</WatchedResource>
+
+    <Resource
+        auth="Container"
+        name="jdbc/h2_test"
+        type="javax.sql.DataSource"
+        driverClassName="org.h2.Driver"
+        url="jdbc:h2:tcp://localhost/~/test"
+        username="sa"
+        password=""
+        maxActive="50"
+        maxIdle="10"
+        loginTimeout="10"
+        maxWait="5000"
+        testOnBorrow="true"
+    />
+</Context>
